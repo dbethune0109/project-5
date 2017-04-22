@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/simple-sidebar.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Map App</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="sidebar-wrapper">
+      <h3 class="sidebar-brand">Hospitals PDX</h3>
+      <div class="searchWrapper">
+        <input type="text" class="searchBox" data-bind="value: filterQuery, valueUpdate: 'afterkeydown'" placeholder="Search">
+      </div>
+      <div id="listContent">
+        <ul class="sidebar-nav" id="list" data-bind="foreach: filteredItems">
+          <li data-bind="text: name, click: $parent.listClick"></li>
+        </ul>
+      </div>
+    </div>
+    <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle">Hide List</a>
+    <div class="page-content-wrapper" id="map">
+    </div>
+  </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/knockout.js"></script>
+<script src="js/app.js"></script>
+
+<script onerror="mapLoadFail()" async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGPRr2Tjh8sW41AiBsBlgrFmQyv7VZN4k&libraries=places&callback=initMap">
+    </script>
+</body>
+</html>

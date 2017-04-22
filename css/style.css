@@ -1,0 +1,11 @@
+body {
+  background-color: red;
+}
+.searchWrapper {
+  position: absolute;
+  top: 80px;
+  left: 35px;
+}
+#map {
+  height: 100%;
+}
